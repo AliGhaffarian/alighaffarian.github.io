@@ -9,7 +9,7 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://zones.arilyn.cc
-timezone:
+timezone: Asia/Tehran
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -19,11 +19,11 @@ title: Ali's Blog # the main title
 tagline: A Linux enthusiast hacking around # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Write ups on eBPF, CTF challenges, and embedded protocol design from personal projects, competitions, and talks.
+  A blog focused on embedded Linux and C programming, along with CTF writeups
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://AliGhaffarian.github.io"
+url: "https://alighaffarian.github.io"
 
 github:
   username: AliGhaffarian # change to your GitHub username
@@ -122,26 +122,17 @@ actions:
     static_url: false # [ true | false ]
 
 comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
-  # The provider options are as follows:
-  disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
-  utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
-  # Giscus options › https://giscus.app
+  provider: giscus
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
+    repo: AliGhaffarian/AliGhaffarian.github.io
+    repo_id: R_kgDOUYRImA
+    category: "Blog Comments"
+    category_id: DIC_kwDOUYRImM4DF5Tw
+    mapping: pathname
+    strict: 0
+    input_position: bottom
+    lang: en
+    reactions_enabled: 1
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:

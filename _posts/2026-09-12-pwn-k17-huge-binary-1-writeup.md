@@ -4,6 +4,7 @@ title: "Pwn K17 Huge Binary 1 Writeup"
 date: 2026-09-12
 categories: [CTF, pwn]
 tags: []
+hidden: true
 ---
 
 ## TL;DR
