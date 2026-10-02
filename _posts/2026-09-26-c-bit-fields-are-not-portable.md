@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Problem You don't Want to Face When Using C Bit Fields"
+title: "C Bit Fields Are Not Portable"
 date: 2026-09-26
 categories: [C, pitfalls]
 tags: [cross-compile, portability, bitfields, systems-programming]
@@ -25,7 +25,7 @@ In the course of making [my own RISC-V emulator](https://github.com/AliGhaffaria
 {: .prompt-info}
 
 
-![](assets/2026-9-26-the-problem-you-dont-want-to-face-when-using-c-bit-fields/Pasted image 20260926153707.png)
+![](assets/2026-9-26-c-bit-fields-are-not-portable/Pasted image 20260926153707.png)
 
 (s-type instruction format, RISC-V unprivileged ISA manual, section 2.3)
 
