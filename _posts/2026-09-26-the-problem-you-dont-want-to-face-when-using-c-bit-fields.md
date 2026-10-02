@@ -10,11 +10,18 @@ tags: [cross-compile, portability, bitfields, systems-programming]
 
 When needing to parse a non byte aligned data structure, mapping it directly to C bit fields in a packed struct seems like a clever decoding approach. But the C standard lets the implementation to make some decisions on the binary layout, beyond our control. Although directly casting to a bit field described structure works fine on amd64(gcc) and probably little endian machines in general, cross compiling for PowerPC64(gcc) (big endian) broke field positions, because the compiler packed bit fields starting from the Most Significant Bit (MSB). My (and probably the only logical) solution was to just use the bitwise operations to extract the fields and assign them to a normal structure.
 
+
+## Prerequisites
+
+- There is no need to understand RISC-V, field names can be safely ignored.
+- [Bit numbering](https://en.wikipedia.org/wiki/Bit_numbering)
+- [Endianess](https://en.wikipedia.org/wiki/Endianness)
+
 ## Context
 
 In the course of making [my own RISC-V emulator](https://github.com/AliGhaffarian/risc-v-emu), I reached to a point in which I needed to decode instructions. The fields of an instruction are not byte aligned, so they can't be parsed to standard C types. In this blog I explain why using bit fields to parse such data structures is not a good idea, and I provide my (and probably the standard) approach to do it.
 
->There is no need to understand what the meaning of the following fields, we are just trying to parse it. On a second note, the "imm" means immediate, and it is split in two parts in the instruction.
+>the “imm” means immediate, and it is split in two parts in the instruction.
 {: .prompt-info}
 
 
@@ -334,7 +341,7 @@ In this example, the binary structure layout is like this:
 ```
 
 ## Conclusion
-When parsing data structures that are not byte aligned, use logical operations (shift + AND + OR) instead of mapping the data structure in the struct using bit fields. Things will get weird if you work with different types of machines/compilers.
+When parsing data structures that are not byte aligned, use logical operations (shift + AND + OR) instead of mapping the data structure in the struct using bit fields. Things will get weird if you work with different types of machines/compilers. Even in the little endian machines, the compiler might decide to break the 1 to 1 mapping of the struct, since the endianess of the machine doesn't directly (if at all) impact on how bit fields are allocated.
 
 ### Version of Used Software
 PowerPC64:
