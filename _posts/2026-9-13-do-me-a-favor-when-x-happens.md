@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Do Me a Favor When X happens! Making a code Programmable Using Dynamic Callbacks"
-categories: [software architecture]
+categories: [internship]
 tags: ["state machines", "C", "FreeRTOS"]
 ---
 
