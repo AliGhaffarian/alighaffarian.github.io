@@ -93,7 +93,7 @@ It would be tedious if we would have to build and run each virtual node and also
 We also would like to see the output of each node, in a clean way. For this I used libtmux, at the startup of the runner, a tmux session is created and for each node we make a new pane.
 
 Here's the result. The initial pane (and the left pane when more are added) is the master, others are slaves ([source code](https://github.com/AliGhaffarian/silly-proto-v1/blob/main/src/runner.py)):
-![the runner running the master and slave](https://github.com/AliGhaffarian/silly-proto-v1/blob/main/assets/demo/silly_proto_demo.webp?raw=true)
+![the runner running the master and slave](assets/2026-10-8-running-multi-node-iot-protocol-using-qemu/4_vm_network_demo.webp)
 
 ## Wrap up
 In this post we managed to get multiple ESP32 virtual machines to talk to each other via a custom runner, which also acts as a TCP proxy server. The nodes talk via UART, which, as far as I understand, on the software level, doesn't differ much from RS-485 (full duplex topology). This runner made my life so much easier while in development. After each change I could see the result with a single command. This runner can later be turned into a generic tool to network QEMU virtual machines.
